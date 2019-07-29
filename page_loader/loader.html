@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Loader Demo</title>
+		<style type="text/css">
+			.loader {
+		    position: fixed;
+		    z-index: 99;
+		    top: 0;
+		    left: 0;
+		    width: 100%;
+		    height: 100%;
+		    background: white;
+		    display: flex;
+		    justify-content: center;
+		    align-items: center;
+		}
+
+		.loader > img {
+		    width: 100px;
+		}
+
+		.loader.hidden {
+		    animation: fadeOut 1s;
+		    animation-fill-mode: forwards;
+		}
+
+		@keyframes fadeOut {
+		    100% {
+		        opacity: 0;
+		        visibility: hidden;
+		    }
+		}
+
+		.thumb {
+		    height: 500px;
+		    border: 3px solid blue;
+		    margin: 10px;
+		}
+		</style>
+
+		<script type="text/javascript">
+			window.addEventListener("load", function () {
+		    const loader = document.querySelector(".loader");
+		    loader.className += " hidden"; // class "loader hidden"
+		});
+		</script>
+</head>
+	<body>
+		<div class="loader">
+	    	<img src="img/Preloader_2.gif" alt="Loading..." />
+		</div>
+		<h2 id="title">Page Loader</h2>
+		<img class="thumb" src="https://homepages.cae.wisc.edu/~ece533/images/fruits.png">
+	</body>
+</html>
